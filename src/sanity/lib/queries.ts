@@ -1,6 +1,6 @@
 import {defineQuery} from 'next-sanity'
 
-export const POSTS_QUERY = defineQuery(`*[_type == "job"]{
+export const JOBS_QUERY = defineQuery(`*[_type == "job"]{
     job_title,
     employer,
     start_date,
