@@ -145,3 +145,20 @@ export type Slug = {
 
 export type AllSanitySchemaTypes = Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./src/sanity/lib/queries.ts
+// Variable: POSTS_QUERY
+// Query: *[_type == "job"]{    job_title,    employer,    start_date,    end_date}
+export type POSTS_QUERYResult = Array<{
+  job_title: string | null;
+  employer: string | null;
+  start_date: string | null;
+  end_date: string | null;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date\n}": POSTS_QUERYResult;
+  }
+}

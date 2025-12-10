@@ -15,11 +15,11 @@ export const jobType = defineType({
     }),
     defineField({
       name: 'start_date',
-      type: 'datetime',
+      type: 'date',
     }),
     defineField({
       name: 'end_date',
-      type: 'datetime',
+      type: 'date',
     }),
   ],
 })
