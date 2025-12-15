@@ -39,28 +39,28 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "employer": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "start_date": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "end_date": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "body": {
         "type": "objectAttribute",
@@ -239,7 +239,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "categories": {
         "type": "objectAttribute",
@@ -249,7 +249,7 @@
             "type": "string"
           }
         },
-        "optional": true
+        "optional": false
       }
     }
   },
