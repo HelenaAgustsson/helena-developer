@@ -1,9 +1,8 @@
 
 import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
-import { PortableText } from "next-sanity";
 import dayjs from "dayjs";
-import Categories from "./categories";
+import JobListing from "./job-listing";
 
 const options = { next: { revalidate: 60 } };
 
@@ -19,13 +18,7 @@ export default async function Experience() {
         <h3 className="text-xl font-bold">Experience</h3>
         <ul className="grid grid-cols-1">
             {posts.map((post, index) => (
-              <li key={index}  className="block my-4 text-aqua">
-                  {post?.job_title} | {post?.employer}
-                  <br />
-                  {dayjs(post?.start_date).format('MMMM YYYY')} - {dayjs(post?.end_date).format('MMMM YYYY')}
-                  <div className="prose text-mist"> {post?.body ? <PortableText value={post.body} /> :null}</div>
-                  {post?.categories ? <Categories categories={post.categories} />:null}
-              </li>
+              <JobListing key={index} data={post} />
             ))}
         </ul>
     </div>
