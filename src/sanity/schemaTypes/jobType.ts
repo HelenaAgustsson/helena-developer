@@ -21,5 +21,10 @@ export const jobType = defineType({
       name: 'end_date',
       type: 'date',
     }),
+    defineField({
+      name: 'body',
+      type: 'array',
+      of: [{type: 'block'}]
+    }),
   ],
 })
