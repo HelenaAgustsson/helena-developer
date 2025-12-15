@@ -10,14 +10,8 @@ const options = { next: { revalidate: 60 } };
 export default async function Experience() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
-  const getStartDate = (post:any) => {
-    return post.start_date;
-  }
-
   posts.sort((a,b):number => {
-    const date1 = getStartDate(a);
-    const date2=getStartDate(b);
-    return dayjs(date2).diff(date1);
+    return dayjs(b.start_date).diff(a.start_date);
   })
   
   return (
