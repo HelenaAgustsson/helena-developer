@@ -1,11 +1,12 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-midnight-violet: #220722;
   --color-thistle: #DBCBD8;
-  --color-azure-mist: #F2FDFF;
+  --color-mist: #F2FDFF;
   --color-aqua: #9AD4D6;
-  --color-pacific-cyan: #068D9D;
+  --color-cyan: #068D9D;
   --color-mint-500: oklch(0.72 0.11 178);
 }
 
