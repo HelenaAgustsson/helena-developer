@@ -5,5 +5,6 @@ export const JOBS_QUERY = defineQuery(`*[_type == "job"]{
     employer,
     start_date,
     end_date,
-    body
+    body,
+    categories
 }`)

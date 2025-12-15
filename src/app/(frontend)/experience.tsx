@@ -29,6 +29,15 @@ export default async function Experience() {
                 <br />
                 {dayjs(post?.start_date).format('MMMM YYYY')} - {dayjs(post?.end_date).format('MMMM YYYY')}
                 <div className="prose text-mist"> {post?.body ? <PortableText value={post.body} /> :null}</div>
+                <ul className="mt-2 flex flex-wrap">
+                  {post?.categories?.map((cat, index) => (
+                    <li key={index} className="mr-1.5 mt-2">
+                      <div className="bg-thistle text-midnight-violet flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5">{cat}</div>
+                    </li>
+                  )
+                )}
+                </ul>
+                
             </li>
             ))}
         </ul>

@@ -26,5 +26,10 @@ export const jobType = defineType({
       type: 'array',
       of: [{type: 'block'}]
     }),
+    defineField({
+      name: 'categories',
+      type: 'array',
+      of: [{type:'string'}]
+    }),
   ],
 })
