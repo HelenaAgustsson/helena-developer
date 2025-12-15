@@ -1,11 +1,27 @@
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
+import dayjs from "dayjs";
 
 const options = { next: { revalidate: 60 } };
 
 export default async function Experience() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
+
+  const getStartDate = (post:any) => {
+    return post.start_date;
+  }
+
+
+  posts.sort((a,b):number => {
+    const date1 = getStartDate(a);
+    const date2=getStartDate(b)
+    return dayjs(date2).diff(date1)
+  })
+  
+  
+
+  
 
   return (
     <div>
@@ -15,7 +31,7 @@ export default async function Experience() {
             <li key={index}  className="block mt-4 hover:text-aqua">
                 {post?.job_title} | {post?.employer}
                 <br />
-                {post?.start_date} - {post?.end_date}
+                {dayjs(post?.start_date).format('MMMM YYYY')} - {dayjs(post?.end_date).format('MMMM YYYY')}
             </li>
             ))}
         </ul>
