@@ -1,5 +1,5 @@
 
-import Experience from "./experience";
+import Experience from "../../components/experience";
 
 export default async function Page() {
   return (
