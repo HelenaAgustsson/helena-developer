@@ -19,11 +19,11 @@ export type Job = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  job_title?: string;
-  employer?: string;
-  start_date?: string;
-  end_date?: string;
-  body?: Array<{
+  job_title: string;
+  employer: string;
+  start_date: string;
+  end_date: string;
+  body: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -41,6 +41,7 @@ export type Job = {
     _type: "block";
     _key: string;
   }>;
+  categories: Array<string>;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -165,12 +166,12 @@ export type AllSanitySchemaTypes = Job | SanityImagePaletteSwatch | SanityImageP
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: JOBS_QUERY
-// Query: *[_type == "job"]{    job_title,    employer,    start_date,    end_date,    body}
+// Query: *[_type == "job"]{    job_title,    employer,    start_date,    end_date,    body,    categories}
 export type JOBS_QUERYResult = Array<{
-  job_title: string | null;
-  employer: string | null;
-  start_date: string | null;
-  end_date: string | null;
+  job_title: string;
+  employer: string;
+  start_date: string;
+  end_date: string;
   body: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -188,13 +189,14 @@ export type JOBS_QUERYResult = Array<{
     level?: number;
     _type: "block";
     _key: string;
-  }> | null;
+  }>;
+  categories: Array<string>;
 }>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body\n}": JOBS_QUERYResult;
+    "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
   }
 }
