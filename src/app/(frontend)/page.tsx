@@ -1,5 +1,6 @@
 
 import Experience from "../../components/experience";
+import Eduction from "@/components/education";
 
 export default async function Page() {
   return (
@@ -9,6 +10,7 @@ export default async function Page() {
       <hr />
       <main className="mt-12">
         <Experience />
+        <Eduction />
       </main>
     </section>
   );
