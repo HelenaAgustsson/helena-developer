@@ -8,3 +8,12 @@ export const JOBS_QUERY = defineQuery(`*[_type == "job"]{
     body,
     categories
 }`)
+
+export const EDU_QUERY = defineQuery(`*[_type == "education"]{
+    degree,
+    institution,
+    result,
+    start_date,
+    end_date,
+    body,
+}`)
