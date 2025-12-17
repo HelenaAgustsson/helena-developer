@@ -13,6 +13,35 @@
  */
 
 // Source: schema.json
+export type Project = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  project: string;
+  github: string;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  categories: Array<string>;
+};
+
 export type Education = {
   _id: string;
   _type: "education";
@@ -193,7 +222,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes = Project | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: JOBS_QUERY
@@ -250,6 +279,31 @@ export type EDU_QUERYResult = Array<{
     _key: string;
   }>;
 }>;
+// Variable: PROJECT_QUERY
+// Query: *[_type == "project"]{    project,    github,    body,    categories}
+export type PROJECT_QUERYResult = Array<{
+  project: string;
+  github: string;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  categories: Array<string>;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -257,5 +311,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
+    "*[_type == \"project\"]{\n    project,\n    github,\n    body,\n    categories\n}": PROJECT_QUERYResult;
   }
 }

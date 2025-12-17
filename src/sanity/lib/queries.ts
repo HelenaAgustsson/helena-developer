@@ -17,3 +17,10 @@ export const EDU_QUERY = defineQuery(`*[_type == "education"]{
     end_date,
     body,
 }`)
+
+export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
+    project,
+    github,
+    body,
+    categories
+}`)

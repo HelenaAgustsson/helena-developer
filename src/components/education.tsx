@@ -11,11 +11,9 @@ export default async function Eduction() {
   posts.sort((a,b):number => {
     return dayjs(b.start_date).diff(a.start_date);
   })
-
-  console.log(posts)
   
   return (
-    <div>
+    <div className="mb-20">
        <h3 className="text-xl font-bold">Education</h3>
         <ul className="grid grid-cols-1">
           {posts.map((post, index) => (
