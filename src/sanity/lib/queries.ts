@@ -22,5 +22,6 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     project,
     github,
     body,
-    categories
+    categories,
+    mainImage,
 }`)

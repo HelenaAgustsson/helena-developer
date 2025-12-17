@@ -39,7 +39,36 @@ export type Project = {
     _type: "block";
     _key: string;
   }>;
-  categories: Array<string>;
+  categories?: Array<string>;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x: number;
+  y: number;
+  height: number;
+  width: number;
 };
 
 export type Education = {
@@ -141,22 +170,6 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x: number;
-  y: number;
-  height: number;
-  width: number;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top: number;
-  bottom: number;
-  left: number;
-  right: number;
-};
-
 export type SanityFileAsset = {
   _id: string;
   _type: "sanity.fileAsset";
@@ -222,7 +235,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = Project | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes = Project | SanityImageCrop | SanityImageHotspot | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: JOBS_QUERY
@@ -280,7 +293,7 @@ export type EDU_QUERYResult = Array<{
   }>;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project"]{    project,    github,    body,    categories}
+// Query: *[_type == "project"]{    project,    github,    body,    categories,    mainImage,}
 export type PROJECT_QUERYResult = Array<{
   project: string;
   github: string;
@@ -302,7 +315,20 @@ export type PROJECT_QUERYResult = Array<{
     _type: "block";
     _key: string;
   }>;
-  categories: Array<string>;
+  categories: Array<string> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
 }>;
 
 // Query TypeMap
@@ -311,6 +337,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
-    "*[_type == \"project\"]{\n    project,\n    github,\n    body,\n    categories\n}": PROJECT_QUERYResult;
+    "*[_type == \"project\"]{\n    project,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
   }
 }
