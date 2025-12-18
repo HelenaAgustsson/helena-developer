@@ -19,5 +19,3 @@ export default async function Page() {
     </section>
   );
 }
-
-// <Link href="/jobs">CV &rarr;</Link> 
