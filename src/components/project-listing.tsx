@@ -3,40 +3,55 @@ import { PROJECT_QUERYResult } from "@/sanity/types";
 import Categories from "./categories";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import githubLogo from "./images/githubLogo.png"
+import Image from "next/image";
 
 interface ProjectListingProps {
     data: NonNullable<PROJECT_QUERYResult[0]>
 }
 
 const ProjectListing = ({data}: ProjectListingProps) => {
-    const {project, github, body, categories, mainImage } = data;
+    const {title, link, github, body, categories, mainImage } = data;
+
+    const formattedLink = link.split("https://")[1];
+
     return (
-        <li className="flex flex-col md:flex-row block my-4 text-aqua">
-            <div className="mb-5">
+        <li className="flex flex-col block my-4 text-aqua">
+            <div className="relative mb-5 w-full h-80">
                 {mainImage ? (
-                <img
-                    className="aspect-320/180"
-                    src={urlFor(mainImage)
-                        .width(320)
-                        .height(180)
-                        .quality(80)
-                        .auto("format")
-                        .url()}
-                    alt={mainImage?.alt || ""}
-                    width="320"
-                    height="180"
-                />
+                        <Image
+                            src={urlFor(mainImage).url()}
+                            alt={mainImage?.alt || ""}
+                            fill
+                            className="object-cover object-top"
+                        />
             ):null}
             </div>
-            <div className="md:ml-5">
-                {project}
+            <div className="">
+                {title}
                 <br />
+                 <Link href={link}>{formattedLink}</Link>
                 <div className="prose text-mist"> {body ? <PortableText value={body} /> :null}</div>
-                    <Link href={github}>Github repo</Link>
-                    {categories ? <Categories categories={categories} />:null}
+                {categories ? <Categories categories={categories} />:null}
+                <div className="mt-5"><Link href={github}><Image src={githubLogo} alt="github logo" height="25" /></Link></div>
             </div>
         </li>
     )
 }
 
 export default ProjectListing;
+
+/*
+<img
+                            className="aspect-450/350"
+                            src={urlFor(mainImage)
+                                .width(450)
+                                .height(350)
+                                .quality(80)
+                                .auto("format")
+                                .url()}
+                            alt={mainImage?.alt || ""}
+                            width="450"
+                            height="350"
+                        />
+                        */

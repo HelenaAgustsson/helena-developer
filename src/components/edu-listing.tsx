@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import { PortableText } from "next-sanity";
 import { EDU_QUERYResult } from "@/sanity/types";
-import Categories from "./categories";
 
 interface EduListingProps {
     data: NonNullable<EDU_QUERYResult[0]>
