@@ -10,9 +10,11 @@ export default async function Page() {
       <h2 className="text-2xl text-aqua">Frontend Developer</h2>
       <hr />
       <main className="mt-12">
-        <Experience />
-        <Projects />
-        <Eduction />
+        <div className="w-full lg:w-1/2">
+          <Experience />
+          <Projects />
+          <Eduction />
+        </div>
       </main>
     </section>
   );

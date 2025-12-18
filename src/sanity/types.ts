@@ -19,7 +19,8 @@ export type Project = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  project: string;
+  title: string;
+  link: string;
   github: string;
   body: Array<{
     children?: Array<{
@@ -293,9 +294,10 @@ export type EDU_QUERYResult = Array<{
   }>;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project"]{    project,    github,    body,    categories,    mainImage,}
+// Query: *[_type == "project"]{    title,    link,    github,    body,    categories,    mainImage,}
 export type PROJECT_QUERYResult = Array<{
-  project: string;
+  title: string;
+  link: string;
   github: string;
   body: Array<{
     children?: Array<{
@@ -337,6 +339,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
-    "*[_type == \"project\"]{\n    project,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
+    "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
   }
 }

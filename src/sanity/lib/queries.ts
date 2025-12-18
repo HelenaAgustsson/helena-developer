@@ -19,7 +19,8 @@ export const EDU_QUERY = defineQuery(`*[_type == "education"]{
 }`)
 
 export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
-    project,
+    title,
+    link,
     github,
     body,
     categories,

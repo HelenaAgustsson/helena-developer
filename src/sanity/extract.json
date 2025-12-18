@@ -34,7 +34,14 @@
           "type": "string"
         }
       },
-      "project": {
+      "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": false
+      },
+      "link": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
