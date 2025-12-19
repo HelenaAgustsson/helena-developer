@@ -26,3 +26,13 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     categories,
     mainImage,
 }`)
+
+export const PDF_QUERY = defineQuery(`*[_type == "pdf"]{
+    pdf_title,
+    pdfFile {
+      asset->{
+        _id,
+        url
+      }
+    }
+}`)

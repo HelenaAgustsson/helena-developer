@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
 import dayjs from "dayjs";
@@ -21,6 +21,7 @@ export default async function Experience() {
               <JobListing key={index} data={post} />
             ))}
         </ul>
+        <Link href='/cv' className="text-bold underline underline-offset-3 hover:text-aqua">View full CV</Link>
     </div>
   );
 }

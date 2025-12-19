@@ -13,6 +13,25 @@
  */
 
 // Source: schema.json
+export type Pdf = {
+  _id: string;
+  _type: "pdf";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  pdf_title: string;
+  pdfFile?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+};
+
 export type Project = {
   _id: string;
   _type: "project";
@@ -236,7 +255,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = Project | SanityImageCrop | SanityImageHotspot | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes = Pdf | Project | SanityImageCrop | SanityImageHotspot | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: JOBS_QUERY
@@ -332,6 +351,17 @@ export type PROJECT_QUERYResult = Array<{
     _type: "image";
   } | null;
 }>;
+// Variable: PDF_QUERY
+// Query: *[_type == "pdf"]{    pdf_title,    pdfFile {      asset->{        _id,        url      }    }}
+export type PDF_QUERYResult = Array<{
+  pdf_title: string;
+  pdfFile: {
+    asset: {
+      _id: string;
+      url: string | null;
+    } | null;
+  } | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -340,5 +370,6 @@ declare module "@sanity/client" {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
+    "*[_type == \"pdf\"]{\n    pdf_title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": PDF_QUERYResult;
   }
 }
