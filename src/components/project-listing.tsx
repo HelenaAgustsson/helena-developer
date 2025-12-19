@@ -11,7 +11,7 @@ interface ProjectListingProps {
 }
 
 const ProjectListing = ({data}: ProjectListingProps) => {
-    const {title, link, github, body, categories, mainImage } = data;
+    const {title, link, github, body, mainImage } = data;
 
     const formattedLink = link.split("https://")[1];
 
@@ -23,7 +23,8 @@ const ProjectListing = ({data}: ProjectListingProps) => {
                             src={urlFor(mainImage).url()}
                             alt={mainImage?.alt || ""}
                             fill
-                            className="object-cover object-top"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover object-top-left"
                         />
             ):null}
             </div>
