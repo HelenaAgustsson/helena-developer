@@ -1,4 +1,4 @@
-
+import About from "@/components/about";
 import Experience from "../../components/experience";
 import Eduction from "@/components/education";
 import Projects from "@/components/projects";
@@ -11,6 +11,7 @@ export default async function Page() {
       <hr />
       <main className="mt-12">
         <div className="w-full lg:w-1/2">
+          <About />
           <Experience />
           <Projects />
           <Eduction />

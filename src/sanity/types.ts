@@ -13,6 +13,33 @@
  */
 
 // Source: schema.json
+export type Profile = {
+  _id: string;
+  _type: "profile";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+};
+
 export type Pdf = {
   _id: string;
   _type: "pdf";
@@ -255,7 +282,7 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = Pdf | Project | SanityImageCrop | SanityImageHotspot | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes = Profile | Pdf | Project | SanityImageCrop | SanityImageHotspot | Education | Job | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: JOBS_QUERY
@@ -362,6 +389,29 @@ export type PDF_QUERYResult = Array<{
     } | null;
   } | null;
 }>;
+// Variable: PROFILE_QUERY
+// Query: *[_type == "profile"]{    title,    body,}
+export type PROFILE_QUERYResult = Array<{
+  title: string;
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -371,5 +421,6 @@ declare module "@sanity/client" {
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
     "*[_type == \"pdf\"]{\n    pdf_title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": PDF_QUERYResult;
+    "*[_type == \"profile\"]{\n    title,\n    body,\n}": PROFILE_QUERYResult;
   }
 }

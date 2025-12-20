@@ -36,3 +36,8 @@ export const PDF_QUERY = defineQuery(`*[_type == "pdf"]{
       }
     }
 }`)
+
+export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me"]{
+    title,
+    body,
+}`)
