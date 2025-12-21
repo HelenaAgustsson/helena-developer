@@ -2,6 +2,8 @@ import About from "@/components/about";
 import Experience from "../../components/experience";
 import Eduction from "@/components/education";
 import Projects from "@/components/projects";
+import Navigation from "@/components/navigation";
+import Intro from "@/components/intro";
 
 export default async function Page() {
   return (
@@ -10,11 +12,17 @@ export default async function Page() {
       <h2 className="text-2xl text-aqua">Frontend Developer</h2>
       <hr />
       <main className="mt-12">
-        <div className="w-full lg:w-1/2">
-          <About />
-          <Experience />
-          <Projects />
-          <Eduction />
+        <div className="w-full lg:flex lg:justify-between lg:gap-4">
+          <div className="lg:w-1/3 lg:sticky lg:top-0 lg:max-h-screen lg:pr-5">
+          <Intro />
+            <Navigation />
+          </div>
+          <div className="lg:w-2/3 lg:pl-5">
+             <About />
+            <Experience />
+            <Projects />
+            <Eduction />
+          </div>
         </div>
       </main>
     </section>

@@ -41,3 +41,7 @@ export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me
     title,
     body,
 }`)
+
+export const INTRO_QUERY = defineQuery(`*[_type == "profile" && title=="Intro"]{
+    body,
+}`)
