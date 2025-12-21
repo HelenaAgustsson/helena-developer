@@ -14,14 +14,14 @@ export default async function Experience() {
   })
   
   return (
-    <div className="mb-20">
-        <h3 className="text-xl font-bold">Experience</h3>
+    <section id="experience" className="mb-20">
+        <h3 className="pt-10 text-xl font-bold">Experience</h3>
         <ul className="grid grid-cols-1">
             {posts.map((post, index) => (
               <JobListing key={index} data={post} />
             ))}
         </ul>
         <Link href='/cv' className="text-bold underline underline-offset-3 hover:text-aqua">View full CV</Link>
-    </div>
+    </section>
   );
 }

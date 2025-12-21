@@ -412,6 +412,28 @@ export type ABOUT_QUERYResult = Array<{
     _key: string;
   }>;
 }>;
+// Variable: INTRO_QUERY
+// Query: *[_type == "profile" && title=="Intro"]{    body,}
+export type INTRO_QUERYResult = Array<{
+  body: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -422,5 +444,6 @@ declare module "@sanity/client" {
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
     "*[_type == \"pdf\"]{\n    pdf_title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": PDF_QUERYResult;
     "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
+    "*[_type == \"profile\" && title==\"Intro\"]{\n    body,\n}": INTRO_QUERYResult;
   }
 }

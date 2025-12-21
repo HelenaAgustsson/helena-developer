@@ -13,13 +13,13 @@ export default async function Eduction() {
   })
   
   return (
-    <div className="mb-20">
-       <h3 className="text-xl font-bold">Education</h3>
+    <section id="education" className="mb-20">
+       <h3 className="pt-10 text-xl font-bold">Education</h3>
         <ul className="grid grid-cols-1">
           {posts.map((post, index) => (
               <EduListing key={index} data={post} />
             ))}
         </ul>
-    </div>
+    </section>
   );
 }
