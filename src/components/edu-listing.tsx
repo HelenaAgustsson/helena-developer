@@ -13,7 +13,7 @@ const EduListing = ({data}: EduListingProps) => {
             {degree}, {result} | {institution}
             <br />
             {dayjs(start_date).format('MMMM YYYY')} - {dayjs(end_date).format('MMMM YYYY')}
-            <div className="prose text-mist"> {body ? <PortableText value={body} /> :null}</div>
+            <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
         </li>
     )
 }

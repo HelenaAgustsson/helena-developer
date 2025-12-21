@@ -389,9 +389,9 @@ export type PDF_QUERYResult = Array<{
     } | null;
   } | null;
 }>;
-// Variable: PROFILE_QUERY
-// Query: *[_type == "profile"]{    title,    body,}
-export type PROFILE_QUERYResult = Array<{
+// Variable: ABOUT_QUERY
+// Query: *[_type == "profile" && title=="About me"]{    title,    body,}
+export type ABOUT_QUERYResult = Array<{
   title: string;
   body: Array<{
     children?: Array<{
@@ -421,6 +421,6 @@ declare module "@sanity/client" {
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
     "*[_type == \"pdf\"]{\n    pdf_title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": PDF_QUERYResult;
-    "*[_type == \"profile\"]{\n    title,\n    body,\n}": PROFILE_QUERYResult;
+    "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
   }
 }

@@ -14,7 +14,7 @@ const JobListing = ({data}: JobListingProps) => {
             {job_title } | {employer}
             <br />
             {dayjs(start_date).format('MMMM YYYY')} - {dayjs(end_date).format('MMMM YYYY')}
-            <div className="prose text-mist"> {body ? <PortableText value={body} /> :null}</div>
+            <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
             {categories ? <Categories categories={categories} />:null}
         </li>
     )

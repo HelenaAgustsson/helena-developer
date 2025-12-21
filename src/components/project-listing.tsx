@@ -32,7 +32,7 @@ const ProjectListing = ({data}: ProjectListingProps) => {
                 {title}
                 <br />
                 <Link href={link}>{formattedLink}</Link>
-                <div className="prose text-mist"> {body ? <PortableText value={body} /> :null}</div>
+                <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
                 <div className="mt-2"><Link href={github}><Image src={githubLogo} alt="github logo" height="25" /></Link></div>
             </div>
         </li>
