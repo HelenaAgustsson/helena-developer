@@ -10,9 +10,9 @@ const Intro = async () => {
     const intro = post[0];
 
     return (
-        <div className="pt-5">
+        <div className="pt-5 lg:mb-0">
             <div className="flex justify-center mb-8"><Image src={profilePic} alt="helena profile" width="200" height="200" className="rounded-full" /></div>
-            <div className="my-4 prose max-w-none text-mist">
+            <div className="my-4 prose max-w-none text-mist hidden lg:block">
                 {intro.body ? <PortableText value={intro.body} /> :null}
             </div>
         </div>

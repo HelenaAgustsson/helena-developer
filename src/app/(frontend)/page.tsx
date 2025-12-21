@@ -17,7 +17,7 @@ export default async function Page() {
             <Intro />
             <Navigation />
           </div>
-          <div className="lg:w-2/3 lg:p-[50px]">
+          <div className="lg:w-2/3 lg:pl-[50px] lg:pr-[50px]">
              <About />
             <Experience />
             <Projects />
