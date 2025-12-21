@@ -14,10 +14,10 @@ export default async function Page() {
       <main className="mt-12">
         <div className="w-full lg:flex lg:justify-between lg:gap-4">
           <div className="lg:w-1/3 lg:sticky lg:top-0 lg:max-h-screen lg:pr-5">
-          <Intro />
+            <Intro />
             <Navigation />
           </div>
-          <div className="lg:w-2/3 lg:pl-5">
+          <div className="lg:w-2/3 lg:p-[50px]">
              <About />
             <Experience />
             <Projects />
