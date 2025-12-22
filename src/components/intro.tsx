@@ -3,7 +3,6 @@ import { PortableText } from "next-sanity";
 import { INTRO_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import profilePic from "./images/profilePic.jpg"
-import Link from "next/link";
 import githubLogo from "./images/githubLogo.png"
 import mail from "./images/mail.png"
 
@@ -21,7 +20,7 @@ const Intro = async () => {
             <div className="my-2">
                 <div className="flex my-2">
                     <div className="mr-2"><Image src={githubLogo} alt="github logo" height="25" /></div>
-                    <Link href="https://github.com/HelenaAgustsson">github.com/HelenaAgustsson</Link>
+                    <a className="text-mist" href="https://github.com/HelenaAgustsson">github.com/HelenaAgustsson</a>
                 </div>
                  <div className="flex my-2">
                     <div className="mr-2"><Image src={mail} alt="github logo" height="25" /></div>

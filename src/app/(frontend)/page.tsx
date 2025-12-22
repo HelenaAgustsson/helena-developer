@@ -4,6 +4,7 @@ import Eduction from "@/components/education";
 import Projects from "@/components/projects";
 import Navigation from "@/components/navigation";
 import Intro from "@/components/intro";
+import Footer from "@/components/footer";
 
 export default async function Page() {
   return (
@@ -18,13 +19,14 @@ export default async function Page() {
             <Navigation />
           </div>
           <div className="lg:w-2/3 lg:pl-[50px] lg:pr-[50px]">
-             <About />
+            <About />
             <Experience />
             <Projects />
             <Eduction />
           </div>
         </div>
       </main>
+      <Footer />
     </section>
   );
 }
