@@ -1,6 +1,5 @@
 import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
-import Categories from "./categories";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import githubLogo from "./images/githubLogo.png"
@@ -16,8 +15,8 @@ const ProjectListing = ({data}: ProjectListingProps) => {
     const formattedLink = link.split("https://")[1];
 
     return (
-        <li className="flex flex-col block my-4 text-aqua">
-            <div className="relative mb-5 w-full h-80">
+        <li className="flex flex-col my-4">
+            <div className="relative mb-5 w-full 2xl:w-2/3 h-80">
                 {mainImage ? (
                         <Image
                             src={urlFor(mainImage).url()}
@@ -28,10 +27,9 @@ const ProjectListing = ({data}: ProjectListingProps) => {
                         />
             ):null}
             </div>
-            <div className="">
-                {title}
-                <br />
-                <Link href={link}>{formattedLink}</Link>
+            <div>
+                <div className="text-aqua">{title}</div>
+                <Link href={link} className="text-aqua">{formattedLink}</Link>
                 <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
                 <div className="mt-2"><Link href={github}><Image src={githubLogo} alt="github logo" height="25" /></Link></div>
             </div>

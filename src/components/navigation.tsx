@@ -1,7 +1,7 @@
 
 const Navigation = () => {
     return (
-            <nav className="nav hidden lg:block">
+            <nav className="nav hidden mt-10 lg:block">
                 <ul className="w-max">
                     <li>
                         <a href="#about" className="group flex items-center py-3 target:text-aqua hover:text-aqua hover:[&>div]:bg-aqua active">

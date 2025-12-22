@@ -8,7 +8,7 @@ export default async function About() {
   const about = post[0];
   
   return (
-    <section id="about" className="mb-20">
+    <section id="about" className="mb-20 mt-20 lg:mt-0">
         {about ? (
             <div>
                 <h3 className="text-xl font-bold">About me</h3>
