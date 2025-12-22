@@ -2,8 +2,9 @@ import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import githubLogo from "./images/githubLogo.png"
 import Image from "next/image";
+import githubLogo from "./images/githubLogo.png"
+import externalLink from "./images/externalLink.png"
 
 interface ProjectListingProps {
     data: NonNullable<PROJECT_QUERYResult[0]>
@@ -11,8 +12,6 @@ interface ProjectListingProps {
 
 const ProjectListing = ({data}: ProjectListingProps) => {
     const {title, link, github, body, mainImage } = data;
-
-    const formattedLink = link.split("https://")[1];
 
     return (
         <li className="flex flex-col my-4">
@@ -28,28 +27,21 @@ const ProjectListing = ({data}: ProjectListingProps) => {
             ):null}
             </div>
             <div>
-                <div className="text-aqua">{title}</div>
-                <Link href={link} className="text-aqua">{formattedLink}</Link>
+                <div className="text-aqua flex gap-2">
+                    {title}
+                </div>
                 <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
-                <div className="mt-2"><Link href={github}><Image src={githubLogo} alt="github logo" height="25" /></Link></div>
+                <div className="flex my-2 gap-2">
+                    <div className="flex flex-col justify-center"><Image src={githubLogo} alt="github logo" className="size-5" /></div>
+                    <a className="text-mist" href={github}>GitHub repo</a>
+                </div>
+                <div className="flex my-2 gap-2">
+                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="github logo" className="size-5" /></div>
+                    <a className="text-mist" href={link}>View website</a>
+                </div>
             </div>
         </li>
     )
 }
 
 export default ProjectListing;
-
-/*
-<img
-                            className="aspect-450/350"
-                            src={urlFor(mainImage)
-                                .width(450)
-                                .height(350)
-                                .quality(80)
-                                .auto("format")
-                                .url()}
-                            alt={mainImage?.alt || ""}
-                            width="450"
-                            height="350"
-                        />
-                        */
