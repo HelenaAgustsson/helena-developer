@@ -14,3 +14,7 @@ body {
     background-color: #220722;
     color: #F2FDFF;
 }
+
+a:hover {
+  text-decoration: underline;
+}

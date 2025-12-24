@@ -9,6 +9,7 @@ export const JOBS_QUERY = defineQuery(`*[_type == "job"]{
     categories
 }`)
 
+
 export const EDU_QUERY = defineQuery(`*[_type == "education"]{
     degree,
     institution,
@@ -25,16 +26,6 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     body,
     categories,
     mainImage,
-}`)
-
-export const PDF_QUERY = defineQuery(`*[_type == "pdf"]{
-    pdf_title,
-    pdfFile {
-      asset->{
-        _id,
-        url
-      }
-    }
 }`)
 
 export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me"]{

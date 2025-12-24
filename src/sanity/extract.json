@@ -257,7 +257,7 @@
           "type": "string"
         }
       },
-      "pdf_title": {
+      "title": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
