@@ -25,7 +25,7 @@ const ProjectListing = ({data}: ProjectListingProps) => {
                         />
             ):null}
             </div>
-            <div>
+            <div className="p-5">
                 <h4 className="flex gap-2 font-semibold">{title}</h4>
                 <div className="prose max-w-none text-violet"> {body ? <PortableText value={body} /> :null}</div>
                 <div className="flex my-2 gap-2 underline">
