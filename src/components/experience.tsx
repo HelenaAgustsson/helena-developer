@@ -12,13 +12,21 @@ export default async function Experience() {
   posts.sort((a,b):number => {
     return dayjs(b.start_date).diff(a.start_date);
   })
+
+  const getHighlighted = (index:number): boolean => {
+    if(index === 0) {
+      return true
+    } else {
+      return false;
+    }
+  }
   
   return (
     <section id="experience" className="mb-20">
         <h3 className="pt-10 text-xl font-bold">Experience</h3>
         <ul className="grid grid-cols-1">
             {posts.map((post, index) => (
-              <JobListing key={index} data={post} />
+              <JobListing key={index} data={post} highlighted={getHighlighted(index)} />
             ))}
         </ul>
         <div className="flex flex-col gap-2">
