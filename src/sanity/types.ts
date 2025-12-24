@@ -46,7 +46,7 @@ export type Pdf = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  pdf_title: string;
+  title: string;
   pdfFile?: {
     asset?: {
       _ref: string;
@@ -378,17 +378,6 @@ export type PROJECT_QUERYResult = Array<{
     _type: "image";
   } | null;
 }>;
-// Variable: PDF_QUERY
-// Query: *[_type == "pdf"]{    pdf_title,    pdfFile {      asset->{        _id,        url      }    }}
-export type PDF_QUERYResult = Array<{
-  pdf_title: string;
-  pdfFile: {
-    asset: {
-      _id: string;
-      url: string | null;
-    } | null;
-  } | null;
-}>;
 // Variable: ABOUT_QUERY
 // Query: *[_type == "profile" && title=="About me"]{    title,    body,}
 export type ABOUT_QUERYResult = Array<{
@@ -442,7 +431,6 @@ declare module "@sanity/client" {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
-    "*[_type == \"pdf\"]{\n    pdf_title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": PDF_QUERYResult;
     "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
     "*[_type == \"profile\" && title==\"Intro\"]{\n    body,\n}": INTRO_QUERYResult;
   }

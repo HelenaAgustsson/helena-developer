@@ -12,7 +12,7 @@ export default async function About() {
         {about ? (
             <div>
                 <h3 className="text-xl font-bold">About me</h3>
-                <div className="my-4 prose max-w-none text-mist">{about.body ? <PortableText value={about.body} /> :null}</div>
+                <div className="my-4 prose max-w-none text-mist [&_strong]:text-aqua [&_strong]:font-normal">{about.body ? <PortableText value={about.body} /> :null}</div>
             </div>
         ):null}
     </section>

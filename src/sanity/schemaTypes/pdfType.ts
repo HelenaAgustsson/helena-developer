@@ -6,7 +6,7 @@ export const pdfType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'pdf_title',
+      name: 'title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),

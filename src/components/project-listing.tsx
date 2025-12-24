@@ -1,6 +1,5 @@
 import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
-import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import githubLogo from "./images/githubLogo.png"
@@ -27,17 +26,15 @@ const ProjectListing = ({data}: ProjectListingProps) => {
             ):null}
             </div>
             <div>
-                <div className="text-aqua flex gap-2">
-                    {title}
-                </div>
+                <h4 className="flex gap-2 font-semibold">{title}</h4>
                 <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
                 <div className="flex my-2 gap-2">
                     <div className="flex flex-col justify-center"><Image src={githubLogo} alt="github logo" className="size-5" /></div>
-                    <a className="text-mist" href={github}>GitHub repo</a>
+                    <a href={github}>GitHub repo</a>
                 </div>
                 <div className="flex my-2 gap-2">
-                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="github logo" className="size-5" /></div>
-                    <a className="text-mist" href={link}>View website</a>
+                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-4" /></div>
+                    <a href={link}>View website</a>
                 </div>
             </div>
         </li>

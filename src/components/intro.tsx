@@ -13,8 +13,10 @@ const Intro = async () => {
 
     return (
         <div className="pt-5 lg:mb-0">
-            <div className="flex justify-center mb-8"><Image src={profilePic} alt="helena profile" width="200" height="200" className="rounded-full" /></div>
-            <div className="my-4 prose max-w-none text-mist">
+            <div className="flex justify-center mb-8">
+                <Image src={profilePic} alt="helena profile" width="200" height="200" className="rounded-full" />
+            </div>
+            <div className="my-4 max-w-none text-mist intro [&_strong]:text-aqua [&_strong]:font-normal">
                 {intro.body ? <PortableText value={intro.body} /> :null}
             </div>
             <div className="my-2">
