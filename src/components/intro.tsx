@@ -16,7 +16,7 @@ const Intro = async () => {
             <div className="flex justify-center mb-8">
                 <Image src={profilePic} alt="helena profile" width="200" height="200" className="rounded-full" />
             </div>
-            <div className="my-8 max-w-none bg-thistle text-violet p-4 rounded-sm">
+            <div className="my-8 max-w-none">
                 {intro.body ? <PortableText value={intro.body} /> :null}
             </div>
             <div className="my-2">
