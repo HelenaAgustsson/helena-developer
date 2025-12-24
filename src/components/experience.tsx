@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import JobListing from "./job-listing";
 import Image from "next/image";
 import externalLink from "./images/externalLink.png"
+import file from "./icons/file.svg"
 
 export default async function Experience() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
@@ -31,15 +32,15 @@ export default async function Experience() {
         </ul>
         <div className="flex flex-col gap-2">
           <div>
-            <Link href='/CV2025.pdf' target="_blank" className="inline-flex gap-2">
-              <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-4" /></div>
-              <span>View full CV (EN)</span>
+            <Link href='/CV2025.pdf' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
+              <div className="flex flex-col justify-center"><Image src={file} alt="external link" className="size-5" /></div>
+              <span>View full CV in English</span>
             </Link>
           </div>
           <div>
-            <Link href='/CV2025NO.pdf' target="_blank" className="inline-flex gap-2">
-              <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-4" /></div>
-              <span>View full CV (NO)</span>
+            <Link href='/CV2025NO.pdf' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
+              <div className="flex flex-col justify-center"><Image src={file} alt="external link" className="size-5" /></div>
+              <span>View full CV in Norwegian</span>
             </Link>
           </div>
         </div>

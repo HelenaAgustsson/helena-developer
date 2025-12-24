@@ -2,7 +2,6 @@ import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import githubViolet from "./icons/githubViolet.svg"
 import externalLink from "./icons/externalLink.svg"
 
 interface ProjectListingProps {
