@@ -2,8 +2,7 @@ import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import githubLogo from "./images/githubLogo.png"
-import externalLink from "./images/externalLink.png"
+import externalLink from "./icons/externalLink.svg"
 
 interface ProjectListingProps {
     data: NonNullable<PROJECT_QUERYResult[0]>
@@ -13,8 +12,8 @@ const ProjectListing = ({data}: ProjectListingProps) => {
     const {title, link, github, body, mainImage } = data;
 
     return (
-        <li className="flex flex-col my-4">
-            <div className="relative mb-5 w-full 2xl:w-2/3 h-80">
+        <li className="flex flex-col my-4 bg-aqua text-violet p-2 rounded-sm">
+            <div className="relative mb-5 w-full h-80">
                 {mainImage ? (
                         <Image
                             src={urlFor(mainImage).url()}
@@ -25,16 +24,16 @@ const ProjectListing = ({data}: ProjectListingProps) => {
                         />
             ):null}
             </div>
-            <div>
+            <div className="p-5">
                 <h4 className="flex gap-2 font-semibold">{title}</h4>
-                <div className="prose max-w-none text-mist"> {body ? <PortableText value={body} /> :null}</div>
-                <div className="flex my-2 gap-2">
-                    <div className="flex flex-col justify-center"><Image src={githubLogo} alt="github logo" className="size-5" /></div>
-                    <a href={github}>GitHub repo</a>
+                <div className="prose max-w-none text-violet"> {body ? <PortableText value={body} /> :null}</div>
+                <div className="flex my-2 gap-2 underline">
+                    <a href={github}>View GitHub repo</a>
+                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="github logo" className="size-5" /></div>
                 </div>
-                <div className="flex my-2 gap-2">
-                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-4" /></div>
+                <div className="flex my-2 gap-2 underline">
                     <a href={link}>View website</a>
+                    <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-5" /></div>
                 </div>
             </div>
         </li>
