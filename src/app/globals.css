@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-midnight-violet: #220722;
+  --color-violet: #220722;
   --color-thistle: #DBCBD8;
   --color-mist: #F2FDFF;
   --color-aqua: #9AD4D6;
