@@ -3,8 +3,9 @@ import { PortableText } from "next-sanity";
 import { INTRO_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import profilePic from "./images/profilePic.jpg"
-import githubLogo from "./images/githubLogo.png"
-import mail from "./images/mail.png"
+import envelope from "./icons/envelope.svg"
+import gitHubWhite from "./icons/githubWhite.svg"
+
 
 const Intro = async () => {
     const { data: post } = await sanityFetch({ query: INTRO_QUERY });
@@ -21,11 +22,11 @@ const Intro = async () => {
             </div>
             <div className="my-2">
                 <div className="flex my-2">
-                    <div className="mr-2"><Image src={githubLogo} alt="github logo" height="25" /></div>
-                    <a className="text-mist" href="https://github.com/HelenaAgustsson">github.com/HelenaAgustsson</a>
+                    <div className="mr-2"><Image src={gitHubWhite} alt="github logo" className="size-7" /></div>
+                    <a className="text-mist underline underline-offset-2" href="https://github.com/HelenaAgustsson">github.com/HelenaAgustsson</a>
                 </div>
                  <div className="flex my-2">
-                    <div className="mr-2"><Image src={mail} alt="github logo" height="25" /></div>
+                    <div className="mr-2"><Image src={envelope} alt="email icon" className="size-6" /></div>
                     <div>agustssonhelena@gmail.com</div>
                 </div>
             </div>

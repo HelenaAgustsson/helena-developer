@@ -27,11 +27,11 @@ const ProjectListing = ({data}: ProjectListingProps) => {
             <div className="p-5">
                 <h4 className="flex gap-2 font-semibold">{title}</h4>
                 <div className="prose max-w-none text-violet"> {body ? <PortableText value={body} /> :null}</div>
-                <div className="flex my-2 gap-2 underline">
+                <div className="flex my-2 gap-2 underline underline-offset-2">
                     <a href={github}>View GitHub repo</a>
                     <div className="flex flex-col justify-center"><Image src={externalLink} alt="github logo" className="size-5" /></div>
                 </div>
-                <div className="flex my-2 gap-2 underline">
+                <div className="flex my-2 gap-2 underline underline-offset-2">
                     <a href={link}>View website</a>
                     <div className="flex flex-col justify-center"><Image src={externalLink} alt="external link" className="size-5" /></div>
                 </div>
