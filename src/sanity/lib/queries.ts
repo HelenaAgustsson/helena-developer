@@ -36,3 +36,23 @@ export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me
 export const INTRO_QUERY = defineQuery(`*[_type == "profile" && title=="Intro"]{
     body,
 }`)
+
+export const CV_NO_QUERY = defineQuery(`*[_type == "pdf" && title=="CV_Norwegian"][0]{
+    title,
+    pdfFile {
+      asset->{
+        _id,
+        url
+      }
+    }
+}`)
+
+export const CV_EN_QUERY = defineQuery(`*[_type == "pdf" && title=="CV_English"][0]{
+    title,
+    pdfFile {
+      asset->{
+        _id,
+        url
+      }
+    }
+}`)

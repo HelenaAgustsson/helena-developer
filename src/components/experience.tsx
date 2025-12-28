@@ -32,13 +32,13 @@ export default async function Experience() {
         </ul>
         <div className="flex flex-col gap-2">
           <div>
-            <Link href='/CV2025.pdf' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
+            <Link href='/cv-english' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
               <div className="flex flex-col justify-center"><Image src={file} alt="external link" className="size-5" /></div>
               <span>View full CV in English</span>
             </Link>
           </div>
           <div>
-            <Link href='/CV2025NO.pdf' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
+            <Link href='/cv-norwegian' target="_blank" className="inline-flex gap-1 underline underline-offset-2">
               <div className="flex flex-col justify-center"><Image src={file} alt="external link" className="size-5" /></div>
               <span>View full CV in Norwegian</span>
             </Link>

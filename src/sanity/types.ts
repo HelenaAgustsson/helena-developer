@@ -423,6 +423,28 @@ export type INTRO_QUERYResult = Array<{
     _key: string;
   }>;
 }>;
+// Variable: CV_NO_QUERY
+// Query: *[_type == "pdf" && title=="CV_Norwegian"][0]{    title,    pdfFile {      asset->{        _id,        url      }    }}
+export type CV_NO_QUERYResult = {
+  title: string;
+  pdfFile: {
+    asset: {
+      _id: string;
+      url: string | null;
+    } | null;
+  } | null;
+} | null;
+// Variable: CV_EN_QUERY
+// Query: *[_type == "pdf" && title=="CV_English"][0]{    title,    pdfFile {      asset->{        _id,        url      }    }}
+export type CV_EN_QUERYResult = {
+  title: string;
+  pdfFile: {
+    asset: {
+      _id: string;
+      url: string | null;
+    } | null;
+  } | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -433,5 +455,7 @@ declare module "@sanity/client" {
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
     "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
     "*[_type == \"profile\" && title==\"Intro\"]{\n    body,\n}": INTRO_QUERYResult;
+    "*[_type == \"pdf\" && title==\"CV_Norwegian\"][0]{\n    title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": CV_NO_QUERYResult;
+    "*[_type == \"pdf\" && title==\"CV_English\"][0]{\n    title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": CV_EN_QUERYResult;
   }
 }
