@@ -18,21 +18,21 @@ const Intro = async () => {
                 <Image src={profilePic} alt="helena profile" width="200" height="200" className="rounded-full" />
             </div>
             <div className="my-8 max-w-none">
-                {intro.body ? <PortableText value={intro.body} /> :null}
+                {intro && intro.body ? <PortableText value={intro.body} /> : null}
             </div>
             <div className="my-2">
                 <div className="flex my-2">
                     <div className="mr-2"><Image src={gitHubWhite} alt="github logo" className="size-7" /></div>
                     <a className="text-mist underline underline-offset-2" href="https://github.com/HelenaAgustsson">github.com/HelenaAgustsson</a>
                 </div>
-                 <div className="flex my-2">
+                <div className="flex my-2">
                     <div className="mr-2"><Image src={envelope} alt="email icon" className="size-6" /></div>
                     <div>agustssonhelena@gmail.com</div>
                 </div>
             </div>
 
         </div>
-        
+
     )
 }
 
