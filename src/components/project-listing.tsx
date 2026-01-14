@@ -12,17 +12,33 @@ interface ProjectListingProps {
 }
 
 const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
-    const { title, link, github, body, mainImage } = data;
+    const { title, link, github, body, mainImage, tabletImage, mobileImage } = data;
 
     return (
-        <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 my-4 border-2 rounded-sm`}>
-            <div className="relative mb-5 w-full h-80">
+        <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 lg:w-full xl:w-4/5 my-4 border-2 rounded-sm`}>
+            <div className="bg-white relative mb-5 w-full h-80">
                 {mainImage ? (
                     <Image
                         src={urlFor(mainImage).url()}
                         alt={mainImage?.alt || ""}
                         fill
-                        className="object-cover objecy-center md:object-top-left"
+                        className="hidden lg:block object-contain object-top"
+                    />
+                ) : null}
+                {tabletImage ? (
+                    <Image
+                        src={urlFor(tabletImage).url()}
+                        alt={tabletImage?.alt || ""}
+                        fill
+                        className="hidden md:block lg:hidden object-cover object-top"
+                    />
+                ) : null}
+                {mobileImage ? (
+                    <Image
+                        src={urlFor(mobileImage).url()}
+                        alt={mobileImage?.alt || ""}
+                        fill
+                        className="block md:hidden object-contain"
                     />
                 ) : null}
             </div>

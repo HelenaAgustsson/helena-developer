@@ -26,6 +26,8 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     body,
     categories,
     mainImage,
+    tabletImage,
+    mobileImage
 }`)
 
 export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me"]{
