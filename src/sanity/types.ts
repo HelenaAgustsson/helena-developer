@@ -100,6 +100,32 @@ export type Project = {
     alt?: string;
     _type: "image";
   };
+  tabletImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  mobileImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
 };
 
 export type SanityImageCrop = {
@@ -340,7 +366,7 @@ export type EDU_QUERYResult = Array<{
   }>;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project"]{    title,    link,    github,    body,    categories,    mainImage,}
+// Query: *[_type == "project"]{    title,    link,    github,    body,    categories,    mainImage,    tabletImage,    mobileImage}
 export type PROJECT_QUERYResult = Array<{
   title: string;
   link: string;
@@ -365,6 +391,32 @@ export type PROJECT_QUERYResult = Array<{
   }>;
   categories: Array<string> | null;
   mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  tabletImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  mobileImage: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -452,7 +504,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
-    "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n}": PROJECT_QUERYResult;
+    "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n    tabletImage,\n    mobileImage\n}": PROJECT_QUERYResult;
     "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
     "*[_type == \"profile\" && title==\"Intro\"]{\n    body,\n}": INTRO_QUERYResult;
     "*[_type == \"pdf\" && title==\"CV_Norwegian\"][0]{\n    title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": CV_NO_QUERYResult;
