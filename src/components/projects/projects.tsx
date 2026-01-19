@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import ProjectListing from "./project-listing";
-import { getHighlighted } from "./helpers";
+import { getHighlighted } from "../helpers";
 
 const options = { next: { revalidate: 60 } };
 
