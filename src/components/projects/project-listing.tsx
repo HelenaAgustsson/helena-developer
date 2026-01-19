@@ -44,7 +44,7 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
                 ) : null}
             </div>
             <div className="p-5">
-                <h4 className="flex gap-2 font-semibold">{title}</h4>
+                <h4 className="text-xl font-semibold mb-2">{title}</h4>
                 <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
                 {categories ? <Categories highlighted={highlighted} color="lavender" categories={categories} /> : null}
                 <div className="mt-5">

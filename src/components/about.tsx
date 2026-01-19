@@ -6,15 +6,15 @@ export default async function About() {
   const { data: post } = await sanityFetch({ query: ABOUT_QUERY });
 
   const about = post[0];
-  
+
   return (
     <section id="about" className="mb-20 mt-20 lg:mt-0">
-        {about ? (
-            <div>
-                <h3 className="text-xl font-bold">About me</h3>
-                <div className="my-4 prose max-w-none text-mist [&_strong]:text-aqua [&_strong]:font-normal">{about.body ? <PortableText value={about.body} /> :null}</div>
-            </div>
-        ):null}
+      {about ? (
+        <div>
+          <h3 className="text-2xl font-semibold">About me</h3>
+          <div className="my-4 prose max-w-none text-mist [&_strong]:text-aqua [&_strong]:font-normal">{about.body ? <PortableText value={about.body} /> : null}</div>
+        </div>
+      ) : null}
     </section>
   );
 }

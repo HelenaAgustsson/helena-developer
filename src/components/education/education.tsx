@@ -14,7 +14,7 @@ export default async function Eduction() {
 
   return (
     <section id="education" className="mb-20">
-      <h3 className="pt-10 text-xl font-bold">Education</h3>
+      <h3 className="pt-10 text-2xl font-semibold">Education</h3>
       <ul className="grid grid-cols-1">
         {posts.map((post, index) => (
           <EduListing key={index} data={post} />

@@ -17,7 +17,7 @@ export default async function Jobs() {
 
   return (
     <section id="experience" className="mb-20">
-      <h3 className="pt-10 text-xl font-bold">Experience</h3>
+      <h3 className="pt-10 text-2xl font-semibold">Experience</h3>
       <ul className="grid grid-cols-1">
         {posts.map((post, index) => (
           <JobListing key={index} data={post} highlighted={getHighlighted(index)} />
