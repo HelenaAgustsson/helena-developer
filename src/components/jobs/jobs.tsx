@@ -4,10 +4,10 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
 import dayjs from "dayjs";
 import JobListing from "./job-listing";
-import file from "./icons/file.svg"
-import { getHighlighted } from "./helpers";
+import file from "../icons/file.svg"
+import { getHighlighted } from "../helpers";
 
-export default async function Experience() {
+export default async function Jobs() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
   posts.sort((a, b): number => {
@@ -17,7 +17,7 @@ export default async function Experience() {
 
   return (
     <section id="experience" className="mb-20">
-      <h3 className="pt-10 text-xl font-bold">Experience</h3>
+      <h3 className="pt-10 text-2xl font-semibold">Experience</h3>
       <ul className="grid grid-cols-1">
         {posts.map((post, index) => (
           <JobListing key={index} data={post} highlighted={getHighlighted(index)} />
