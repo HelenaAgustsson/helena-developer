@@ -9,7 +9,7 @@ export default async function Projects() {
 
   return (
     <section id="projects" className="mb-20">
-      <h3 className="pt-10 text-3xl font-semibold">Projects</h3>
+      <h3 className="pt-10 text-2xl font-semibold">Projects</h3>
       <ul className="grid grid-cols-1">
         {posts.map((post, index) => (
           <ProjectListing key={index} data={post} highlighted={false} />
