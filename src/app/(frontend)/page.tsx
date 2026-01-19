@@ -1,5 +1,5 @@
 import About from "@/components/about";
-import Experience from "../../components/jobs/jobs";
+import Jobs from "@/components/jobs/jobs";
 import Eduction from "@/components/education/education";
 import Projects from "@/components/projects/projects";
 import Navigation from "@/components/navigation";
@@ -20,7 +20,7 @@ export default async function Page() {
           </div>
           <div className="lg:w-2/3 lg:px-[100px]">
             <About />
-            <Experience />
+            <Jobs />
             <Projects />
             <Eduction />
           </div>

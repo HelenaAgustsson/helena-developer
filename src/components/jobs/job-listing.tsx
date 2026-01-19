@@ -15,7 +15,7 @@ const JobListing = ({ data, highlighted }: JobListingProps) => {
             <h4 className="font-semibold">{job_title} | {employer}</h4>
             <div>{dayjs(start_date).format('MMMM YYYY')} - {dayjs(end_date).format('MMMM YYYY')}</div>
             <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
-            {categories ? <Categories highlighted={highlighted} categories={categories} /> : null}
+            {categories ? <Categories highlighted={highlighted} color="aqua" categories={categories} /> : null}
         </li>
     )
 }

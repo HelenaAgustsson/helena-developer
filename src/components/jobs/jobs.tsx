@@ -4,10 +4,10 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
 import dayjs from "dayjs";
 import JobListing from "./job-listing";
-import file from "./icons/file.svg"
+import file from "../icons/file.svg"
 import { getHighlighted } from "../helpers";
 
-export default async function Experience() {
+export default async function Jobs() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
   posts.sort((a, b): number => {
