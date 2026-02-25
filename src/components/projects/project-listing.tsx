@@ -16,7 +16,7 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
     const { title, link, github, body, categories, mainImage } = data;
 
     return (
-        <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 lg:w-full xl:w-4/5 min-h-[600px] my-4 border-2 rounded-sm`}>
+        <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 lg:w-full xl:w-4/5 my-4 border-2 rounded-sm`}>
             <div className="w-full h-auto">
                 {mainImage ? (
                     <Image
