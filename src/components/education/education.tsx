@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { EDU_QUERY } from "@/sanity/lib/queries";
 import dayjs from "dayjs";
-import EduListing from "./edu-listing";
+import { EduListing } from "./edu-listing";
 
 const options = { next: { revalidate: 60 } };
 
