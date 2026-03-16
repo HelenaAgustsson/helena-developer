@@ -1,6 +1,6 @@
 import About from "@/components/about";
 import Jobs from "@/components/jobs/jobs";
-import Eduction from "@/components/education/education";
+import { Education } from "@/components/education/education";
 import Projects from "@/components/projects/projects";
 import Navigation from "@/components/navigation";
 import Intro from "@/components/intro";
@@ -22,7 +22,7 @@ export default async function Page() {
             <About />
             <Jobs />
             <Projects />
-            <Eduction />
+            <Education />
           </div>
         </div>
       </main>
