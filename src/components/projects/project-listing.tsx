@@ -17,7 +17,7 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
 
     return (
         <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 lg:w-full xl:w-4/5 my-4 border-2 rounded-sm`}>
-            <CustomImage image={mainImage} fill={true} />
+            <CustomImage image={mainImage} width={800} height={500} />
             <div className="p-5">
                 <h4 className="text-xl font-semibold mb-2">{title}</h4>
                 <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
