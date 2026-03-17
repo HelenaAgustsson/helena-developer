@@ -1,7 +1,7 @@
 import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
-import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import { CustomImage } from "../customImage";
 import Categories from "../categories";
 import externalLink from "../icons/externalLink.svg"
 import externalLinkWhite from "../icons/externalLinkWhite.svg"
@@ -17,20 +17,11 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
 
     return (
         <li className={`${highlighted ? 'bg-thistle text-violet border-thistle' : 'border-thistle'} flex flex-col w-full md:w-4/5 lg:w-full xl:w-4/5 my-4 border-2 rounded-sm`}>
-            <div className="w-full h-auto">
-                {mainImage ? (
-                    <Image
-                        src={urlFor(mainImage).url()}
-                        alt={mainImage?.alt || ""}
-                        width={800}
-                        height={500}
-                    />
-                ) : null}
-            </div>
+            <CustomImage image={mainImage} width={800} height={500} />
             <div className="p-5">
                 <h4 className="text-xl font-semibold mb-2">{title}</h4>
                 <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
-                {categories ? <Categories highlighted={highlighted} color="lavender" categories={categories} /> : null}
+                {categories && <Categories highlighted={highlighted} color="lavender" categories={categories} />}
                 <div className="mt-5">
                     <div className="flex my-2 gap-2 underline underline-offset-2">
                         <a href={github}>View GitHub repo</a>

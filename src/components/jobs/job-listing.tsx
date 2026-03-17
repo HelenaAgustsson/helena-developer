@@ -10,10 +10,14 @@ interface JobListingProps {
 
 const JobListing = ({ data, highlighted }: JobListingProps) => {
     const { job_title, employer, start_date, end_date, body, categories } = data;
+
+    const start = start_date ? dayjs(start_date).format('MMMM YYYY') : '…';
+    const end = end_date ? dayjs(end_date).format('MMMM YYYY') : 'Present';
+
     return (
         <li className={`block my-4 ${highlighted ? 'bg-aqua text-violet p-3' : null} rounded-sm`}>
             <h4 className="font-semibold">{job_title} | {employer}</h4>
-            <div>{dayjs(start_date).format('MMMM YYYY')} - {dayjs(end_date).format('MMMM YYYY')}</div>
+            <time>{start} - {end}</time>
             <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
             {categories ? <Categories highlighted={highlighted} color="aqua" categories={categories} /> : null}
         </li>
