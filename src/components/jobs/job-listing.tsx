@@ -1,14 +1,14 @@
 import dayjs from "dayjs";
 import { PortableText } from "next-sanity";
 import { JOBS_QUERYResult } from "@/sanity/types";
-import Categories from "../categories";
+import { Categories } from "../categories";
 
 interface JobListingProps {
     data: NonNullable<JOBS_QUERYResult[0]>
     highlighted: boolean;
 }
 
-const JobListing = ({ data, highlighted }: JobListingProps) => {
+export function JobListing({ data, highlighted }: JobListingProps) {
     const { job_title, employer, start_date, end_date, body, categories } = data;
 
     const start = start_date ? dayjs(start_date).format('MMMM YYYY') : '…';
@@ -23,5 +23,3 @@ const JobListing = ({ data, highlighted }: JobListingProps) => {
         </li>
     )
 }
-
-export default JobListing;
