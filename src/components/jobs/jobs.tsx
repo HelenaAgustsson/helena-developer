@@ -8,7 +8,7 @@ import { JobListing } from "./job-listing";
 import file from "../icons/file.svg"
 
 
-export async function Jobs() {
+export async function Jobs(): Promise<React.ReactElement> {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
   sortPosts(posts)

@@ -4,7 +4,7 @@ import { ProjectListing } from "./project-listing";
 
 const options = { next: { revalidate: 60 } };
 
-export async function Projects() {
+export async function Projects(): Promise<React.ReactElement> {
   const { data: posts } = await sanityFetch({ query: PROJECT_QUERY });
 
   return (
