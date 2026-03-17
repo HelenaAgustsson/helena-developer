@@ -15,6 +15,12 @@ export function CustomImage({ image, fill = false }: CustomImageProps) {
     const imageUrl = urlFor(image).url();
     const altText = image.alt ?? "";
 
+    const blurDataURL = urlFor(image)
+        .width(20)
+        .quality(20)
+        .url();
+
+
     if (fill) {
         return (
             <div className="relative w-full h-full">
@@ -23,6 +29,8 @@ export function CustomImage({ image, fill = false }: CustomImageProps) {
                     alt={altText}
                     width={800}
                     height={500}
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
                 />
             </div>
         )

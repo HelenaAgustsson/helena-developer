@@ -21,7 +21,7 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
             <div className="p-5">
                 <h4 className="text-xl font-semibold mb-2">{title}</h4>
                 <div className={`prose max-w-none ${highlighted ? 'text-violet' : 'text-mist'}`}> {body ? <PortableText value={body} /> : null}</div>
-                {categories ? <Categories highlighted={highlighted} color="lavender" categories={categories} /> : null}
+                {categories && <Categories highlighted={highlighted} color="lavender" categories={categories} />}
                 <div className="mt-5">
                     <div className="flex my-2 gap-2 underline underline-offset-2">
                         <a href={github}>View GitHub repo</a>
