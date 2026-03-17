@@ -1,5 +1,5 @@
 import { urlFor } from "@/sanity/lib/image";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 
 type SanityImage = NonNullable<NonNullable<PROJECT_QUERYResult[0]>['mainImage']>;
