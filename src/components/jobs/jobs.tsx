@@ -2,18 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
-import dayjs from "dayjs";
+import { getHighlighted } from "../helpers/getHighlighted";
+import { sortPosts } from "../helpers/sortPosts";
 import JobListing from "./job-listing";
 import file from "../icons/file.svg"
-import { getHighlighted } from "../helpers";
+
 
 export default async function Jobs() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
-  posts.sort((a, b): number => {
-    return dayjs(b.start_date).diff(a.start_date);
-  })
-
+  sortPosts(posts)
 
   return (
     <section id="experience" className="mb-20">
