@@ -5,7 +5,7 @@ interface CategoryProps {
     color: 'lavender' | 'aqua';
 }
 
-const Categories = ({ categories, color, highlighted }: CategoryProps) => {
+export function Categories({ categories, color, highlighted }: CategoryProps) {
     let colorScheme = ''
     if (color === 'lavender') {
         colorScheme = 'bg-thistle text-violet'
@@ -27,5 +27,3 @@ const Categories = ({ categories, color, highlighted }: CategoryProps) => {
         </ul>
     )
 }
-
-export default Categories;

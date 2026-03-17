@@ -1,5 +1,5 @@
 
-const Footer = () => {
+export function Footer() {
     return (
         <div className="mt-50">
             <span className="mr-2">Author: Helena Agustsson (2025)</span>|
@@ -7,5 +7,3 @@ const Footer = () => {
         </div>
     )
 }
-
-export default Footer;

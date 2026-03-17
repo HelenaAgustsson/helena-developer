@@ -1,10 +1,10 @@
-import About from "@/components/about";
-import Jobs from "@/components/jobs/jobs";
+import { Navigation } from "@/components/navigation";
+import { Intro } from "@/components/intro";
+import { About } from "@/components/about";
+import { Jobs } from "@/components/jobs/jobs";
+import { Projects } from "@/components/projects/projects";
 import { Education } from "@/components/education/education";
-import Projects from "@/components/projects/projects";
-import Navigation from "@/components/navigation";
-import Intro from "@/components/intro";
-import Footer from "@/components/footer";
+import { Footer } from "@/components/footer";
 
 export default async function Page() {
   return (

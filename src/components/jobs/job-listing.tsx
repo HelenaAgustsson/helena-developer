@@ -8,7 +8,7 @@ interface JobListingProps {
     highlighted: boolean;
 }
 
-const JobListing = ({ data, highlighted }: JobListingProps) => {
+export function JobListing({ data, highlighted }: JobListingProps) {
     const { job_title, employer, start_date, end_date, body, categories } = data;
 
     const start = start_date ? dayjs(start_date).format('MMMM YYYY') : '…';
@@ -23,5 +23,3 @@ const JobListing = ({ data, highlighted }: JobListingProps) => {
         </li>
     )
 }
-
-export default JobListing;

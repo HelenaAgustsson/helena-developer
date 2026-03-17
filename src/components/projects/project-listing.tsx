@@ -12,7 +12,7 @@ interface ProjectListingProps {
     highlighted: boolean
 }
 
-const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
+export function ProjectListing({ data, highlighted }: ProjectListingProps) {
     const { title, link, github, body, categories, mainImage } = data;
 
     return (
@@ -36,5 +36,3 @@ const ProjectListing = ({ data, highlighted }: ProjectListingProps) => {
         </li>
     )
 }
-
-export default ProjectListing;

@@ -7,7 +7,7 @@ import envelope from "./icons/envelope.svg"
 import gitHubWhite from "./icons/githubWhite.svg"
 
 
-const Intro = async () => {
+export async function Intro() {
     const { data: post } = await sanityFetch({ query: INTRO_QUERY });
 
     const intro = post[0];
@@ -35,5 +35,3 @@ const Intro = async () => {
 
     )
 }
-
-export default Intro;

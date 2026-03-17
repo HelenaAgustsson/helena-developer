@@ -4,11 +4,11 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
 import { getHighlighted } from "../helpers/getHighlighted";
 import { sortPosts } from "../helpers/sortPosts";
-import JobListing from "./job-listing";
+import { JobListing } from "./job-listing";
 import file from "../icons/file.svg"
 
 
-export default async function Jobs() {
+export async function Jobs() {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
   sortPosts(posts)

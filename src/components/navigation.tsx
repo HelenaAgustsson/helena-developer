@@ -1,5 +1,5 @@
 
-const Navigation = () => {
+export function Navigation() {
 
     const items = [
         { title: 'About me', anchor: '#about' },
@@ -25,5 +25,3 @@ const Navigation = () => {
 
     )
 }
-
-export default Navigation;

@@ -1,10 +1,10 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
-import ProjectListing from "./project-listing";
+import { ProjectListing } from "./project-listing";
 
 const options = { next: { revalidate: 60 } };
 
-export default async function Projects() {
+export async function Projects() {
   const { data: posts } = await sanityFetch({ query: PROJECT_QUERY });
 
   return (
