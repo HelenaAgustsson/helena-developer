@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { PortableText } from "next-sanity";
 import { JOBS_QUERYResult } from "@/sanity/types";
-import Categories from "../categories";
+import { Categories } from "../categories";
 
 interface JobListingProps {
     data: NonNullable<JOBS_QUERYResult[0]>

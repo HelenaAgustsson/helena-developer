@@ -2,7 +2,7 @@ import { PortableText } from "next-sanity";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 import Image from "next/image";
 import { CustomImage } from "../custom-image";
-import Categories from "../categories";
+import { Categories } from "../categories";
 import externalLink from "../icons/externalLink.svg"
 import externalLinkWhite from "../icons/externalLinkWhite.svg"
 
