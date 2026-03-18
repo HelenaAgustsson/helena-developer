@@ -5,15 +5,12 @@ interface CategoryProps {
     color: 'lavender' | 'aqua';
 }
 
-export function Categories({ categories, color, highlighted }: CategoryProps) {
-    let colorScheme = ''
-    if (color === 'lavender') {
-        colorScheme = 'bg-thistle text-violet'
-    } else if (color === 'aqua' && !highlighted) {
-        colorScheme = 'bg-aqua text-violet'
-    } else if (color === 'aqua' && highlighted) {
-        colorScheme = 'bg-violet text-aqua'
-    }
+export function Categories({ categories = [], color, highlighted }: CategoryProps) {
+    const colorSchemes = {
+        lavender: 'bg-thistle text-violet',
+        aqua: highlighted ? 'bg-violet text-aqua' : 'bg-aqua text-violet',
+    };
+    const colorScheme = colorSchemes[color] || '';
 
     return (
         <ul className="my-2 flex flex-wrap">
