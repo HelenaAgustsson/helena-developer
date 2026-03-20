@@ -380,9 +380,9 @@ export type PROJECT_QUERYResult = Array<{
   tabletImage: null;
   mobileImage: null;
 }>;
-// Variable: ABOUT_QUERY
-// Query: *[_type == "profile" && title=="About me"]{    title,    body,}
-export type ABOUT_QUERYResult = Array<{
+// Variable: PROFILE_QUERY
+// Query: *[_type == "profile" && title=="About me"][0]{    title,    body,}
+export type PROFILE_QUERYResult = {
   title: string;
   body: Array<{
     children?: Array<{
@@ -402,7 +402,7 @@ export type ABOUT_QUERYResult = Array<{
     _type: "block";
     _key: string;
   }>;
-}>;
+} | null;
 // Variable: INTRO_QUERY
 // Query: *[_type == "profile" && title=="Intro"]{    body,}
 export type INTRO_QUERYResult = Array<{
@@ -455,7 +455,7 @@ declare module "@sanity/client" {
     "*[_type == \"job\"]{\n    job_title,\n    employer,\n    start_date,\n    end_date,\n    body,\n    categories\n}": JOBS_QUERYResult;
     "*[_type == \"education\"]{\n    degree,\n    institution,\n    result,\n    start_date,\n    end_date,\n    body,\n}": EDU_QUERYResult;
     "*[_type == \"project\"]{\n    title,\n    link,\n    github,\n    body,\n    categories,\n    mainImage,\n    tabletImage,\n    mobileImage\n}": PROJECT_QUERYResult;
-    "*[_type == \"profile\" && title==\"About me\"]{\n    title,\n    body,\n}": ABOUT_QUERYResult;
+    "*[_type == \"profile\" && title==\"About me\"][0]{\n    title,\n    body,\n}": PROFILE_QUERYResult;
     "*[_type == \"profile\" && title==\"Intro\"]{\n    body,\n}": INTRO_QUERYResult;
     "*[_type == \"pdf\" && title==\"CV_Norwegian\"][0]{\n    title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": CV_NO_QUERYResult;
     "*[_type == \"pdf\" && title==\"CV_English\"][0]{\n    title,\n    pdfFile {\n      asset->{\n        _id,\n        url\n      }\n    }\n}": CV_EN_QUERYResult;
