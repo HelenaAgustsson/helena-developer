@@ -3,7 +3,7 @@ import { Intro } from "@/components/intro";
 import { Profile } from "@/components/profile";
 import { Jobs } from "@/components/jobs/jobs";
 import { Projects } from "@/components/projects/projects";
-import { Education } from "@/components/education/education";
+import { Education } from "@/components/education";
 import { Footer } from "@/components/footer";
 
 export default async function Page() {

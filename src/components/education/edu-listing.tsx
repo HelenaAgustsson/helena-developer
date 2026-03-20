@@ -9,14 +9,19 @@ interface Props {
 export function EduListing({ data }: Props) {
     const { degree, result, institution, start_date, end_date, body } = data;
 
-    const start = start_date ? dayjs(start_date).format('MMMM YYYY') : '…';
-    const end = end_date ? dayjs(end_date).format('MMMM YYYY') : 'Present';
+    const isComplete = degree && result && institution && start_date && end_date;
 
-    return (
-        <li className="block my-4">
-            <h4 className="font-semibold">{degree}, {result} | {institution}</h4>
-            <time>{start} - {end}</time>
-            <div className="prose max-w-none text-mist"> {body && <PortableText value={body} />}</div>
-        </li>
-    )
+    if (isComplete) {
+        const start = dayjs(start_date).format('MMMM YYYY');
+        const end = dayjs(end_date).format('MMMM YYYY');
+        return (
+            <li className="block my-4">
+                <h4 className="font-semibold">{degree}, {result} | {institution}</h4>
+                <time>{start} - {end}</time>
+                <div className="prose max-w-none text-mist"> {body && <PortableText value={body} />}</div>
+            </li>
+        )
+    } else {
+        return null;
+    }
 }
