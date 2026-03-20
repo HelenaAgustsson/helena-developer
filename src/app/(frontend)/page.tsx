@@ -1,6 +1,6 @@
 import { Navigation } from "@/components/navigation";
 import { Intro } from "@/components/intro";
-import { About } from "@/components/about";
+import { Profile } from "@/components/profile";
 import { Jobs } from "@/components/jobs/jobs";
 import { Projects } from "@/components/projects/projects";
 import { Education } from "@/components/education/education";
@@ -19,7 +19,7 @@ export default async function Page() {
             <Navigation />
           </div>
           <div className="lg:w-2/3 lg:px-[100px]">
-            <About />
+            <Profile />
             <Jobs />
             <Projects />
             <Education />

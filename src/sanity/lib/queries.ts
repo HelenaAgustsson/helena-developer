@@ -30,7 +30,7 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project"]{
     mobileImage
 }`)
 
-export const ABOUT_QUERY = defineQuery(`*[_type == "profile" && title=="About me"]{
+export const PROFILE_QUERY = defineQuery(`*[_type == "profile" && title=="About me"][0]{
     title,
     body,
 }`)
