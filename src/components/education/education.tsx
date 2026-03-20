@@ -1,7 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { EDU_QUERY } from "@/sanity/lib/queries";
 import { sortPosts } from "../helpers/sortPosts";
-import { EduListing } from "./edu-listing";
+import { EduListing } from "./eduListing";
 
 export async function Education(): Promise<React.JSX.Element> {
   const { data: posts } = await sanityFetch({ query: EDU_QUERY });
