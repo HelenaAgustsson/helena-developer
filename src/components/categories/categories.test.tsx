@@ -55,7 +55,7 @@ describe('Categories', () => {
         expect(categoryDiv).toHaveClass('bg-violet', 'text-aqua');
     });
 
-    it('renders empty list when no categories provided', () => {
+    it('renders nothing when no categories provided', () => {
         const { container } = render(
             <Categories
                 categories={[]}
@@ -64,7 +64,7 @@ describe('Categories', () => {
             />
         );
 
-        const listItems = container.querySelectorAll('li');
-        expect(listItems).toHaveLength(0);
+        const listItems = container.querySelector('ul');
+        expect(listItems).not.toBeInTheDocument();
     });
 });

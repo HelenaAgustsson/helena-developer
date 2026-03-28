@@ -4,7 +4,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { JOBS_QUERY } from "@/sanity/lib/queries";
 import { getHighlighted } from "../helpers/getHighlighted";
 import { sortPosts } from "../helpers/sortPosts";
-import { JobListing } from "./job-listing";
+import { JobListing } from "./jobListing";
 import file from "../icons/file.svg"
 
 
