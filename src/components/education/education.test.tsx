@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Education } from './education';
 import { sanityFetch } from "@/sanity/lib/live";
+import { sortPosts } from '../helpers/sortPosts';
 
 jest.mock("next-sanity", () => ({
     defineQuery: (query: string) => query,
@@ -34,6 +35,7 @@ describe('Education', () => {
         render(component);
 
         expect(screen.getByText("Education")).toBeInTheDocument();
+        expect(sortPosts).toHaveBeenCalledWith(mockPosts);
     })
 
 });

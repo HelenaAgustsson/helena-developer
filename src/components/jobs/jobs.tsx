@@ -11,15 +11,15 @@ import file from "../icons/file.svg"
 export async function Jobs(): Promise<React.ReactElement> {
   const { data: posts } = await sanityFetch({ query: JOBS_QUERY });
 
-  sortPosts(posts)
+  const sortedPosts = sortPosts(posts);
 
   return (
     <section id="experience" className="mb-20">
       <h3 className="pt-10 text-2xl font-semibold">Experience</h3>
       <ul className="grid grid-cols-1">
-        {posts.map((post, index) => (
+        {sortedPosts && Array.isArray(sortedPosts) ? sortedPosts.map((post, index) => (
           <JobListing key={index} data={post} highlighted={getHighlighted(index)} />
-        ))}
+        )) : <div>Error loading job data.</div>}
       </ul>
       <div className="flex flex-col gap-2">
         <div>
