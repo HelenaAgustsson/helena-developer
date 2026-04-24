@@ -68,6 +68,8 @@ Then open:
 
 http://localhost:3000
 
+---
+
 ## 🏗️ Architecture decisions
 
 ### 1. Decoupled architecture (Next.js + Sanity)
