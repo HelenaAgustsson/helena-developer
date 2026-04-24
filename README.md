@@ -1,38 +1,59 @@
-This is my online developer CV/portfolio, built in December 2025.
+## 👩‍💻 Helena Agustsson — Developer Portfolio
 
-It is built in [Next.js](https://nextjs.org) and [Sanity](https://www.sanity.io/). I used [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) to get started.
+This is my personal developer portfolio, built in December 2025 to showcase my work and technical approach to modern web development.
 
-## Background
+🔗 Live site: https://helena-developer.vercel.app/
 
-I built this website for myself, to showcase my web development skills, particularly React, Typescript and decoupled architecture.
 
-I am developing my skills Next.js and Sanity and used the documentation and Learn Sanity track as a guide:
+## ✨ About the project
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Sanity Learn](https://www.sanity.io/learn)
+This project is a content-driven portfolio application built with a decoupled architecture using Next.js and Sanity.
 
-## Deployed on Vercel
+It was created to:
 
-I deployed this app using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+Showcase my frontend and full-stack development skills
+Demonstrate a scalable, CMS-driven approach
+Explore modern React patterns with TypeScript
 
-You can view the live product at [helena-developer.vercel.app/](https://helena-developer.vercel.app/)
 
-## Local development
+## 🧠 Tech stack
+Framework: Next.js
+Language: TypeScript
+CMS: Sanity (headless CMS)
+Deployment: Vercel
 
-To run the development server:
 
-## Getting Started
+## 📚 Learning focus
+This project was also used to deepen my understanding of:
 
-First, run the development server:
+Next.js (routing, data fetching, rendering strategies)
+Headless CMS integration
+Structuring content-driven applications
 
-```bash
+I followed official resources including:
+
+Next.js documentation
+Sanity “Learn” track
+
+
+## 🚀 Deployment
+The application is deployed on Vercel.
+
+🔗 Live site: https://helena-developer.vercel.app/
+
+
+## 🛠️ Local development
+
+Clone the repository and install dependencies:
+
+git clone https://github.com/HelenaAgustsson/helena-developer
+cd helena-developer
+npm install
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
+
+http://localhost:3000
