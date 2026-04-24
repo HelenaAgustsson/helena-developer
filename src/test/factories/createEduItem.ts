@@ -1,6 +1,7 @@
 import type { EDU_QUERYResult } from '@/sanity/types';
 import { createPortableText } from './createPortableText';
 
+// Define the type for an education item based on the query result
 type EduItem = NonNullable<EDU_QUERYResult[0]>;
 
 export const createEduItem = (overrides?: Partial<EduItem>): EduItem => ({

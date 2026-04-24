@@ -2,7 +2,8 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import { PROJECT_QUERYResult } from "@/sanity/types";
 
-type SanityImage = NonNullable<NonNullable<PROJECT_QUERYResult[0]>['mainImage']>;
+type ProjectItem = NonNullable<PROJECT_QUERYResult[number]>;
+export type SanityImage = NonNullable<ProjectItem["mainImage"]>;
 
 interface CustomImageProps {
     image: SanityImage | null | undefined;

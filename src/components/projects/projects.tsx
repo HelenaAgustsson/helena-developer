@@ -1,6 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
-import { ProjectListing } from "./project-listing";
+import { ProjectListing } from "./projectListing";
 
 const options = { next: { revalidate: 60 } };
 
