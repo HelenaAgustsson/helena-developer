@@ -1,3 +1,7 @@
+<p align="center">
+    <img style="border: 2px solid grey; border-radius:5px;" src="./public/portfolio-preview.png" alt="Portfolio preview" width="900"/>
+</p>
+
 # Helena Agustsson — Developer Portfolio
 
 This is my personal developer portfolio, built in December 2025 to showcase my work and technical approach to modern web development.
@@ -6,7 +10,7 @@ This is my personal developer portfolio, built in December 2025 to showcase my w
 
 ---
 
-## ✨ About the project
+## About the project
 
 This project is a **content-driven portfolio application** built with a decoupled architecture using Next.js and Sanity.
 
@@ -24,6 +28,8 @@ It was created to:
 - **Framework:** Next.js
 - **Language:** React & TypeScript
 - **CMS:** Sanity (headless CMS)
+- **Testing** Jest and RTL
+- **Styling** Tailwind
 - **Deployment:** Vercel
 
 ---
@@ -64,15 +70,15 @@ This project reinforced how transferable concepts such as component-based archit
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
-The application is deployed on Vercel.
+The application is deployed on Vercel 🚀
 
 🔗 **Live site:** https://helena-developer.vercel.app/
 
 ---
 
-## 🛠️ Local development
+## Local development
 
 Clone the repository and install dependencies:
 
