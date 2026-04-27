@@ -1,4 +1,4 @@
-# 👩‍💻 Helena Agustsson — Developer Portfolio
+# Helena Agustsson — Developer Portfolio
 
 This is my personal developer portfolio, built in December 2025 to showcase my work and technical approach to modern web development.
 
@@ -11,32 +11,56 @@ This is my personal developer portfolio, built in December 2025 to showcase my w
 This project is a **content-driven portfolio application** built with a decoupled architecture using Next.js and Sanity.
 
 It was created to:
-- Showcase my frontend and full-stack development skills  
-- Demonstrate a scalable, CMS-driven approach  
-- Explore modern React patterns with TypeScript  
+
+- Introduce myself and my work
+- Showcase my frontend and full-stack development skills
+- Demonstrate a scalable, CMS-driven approach
+- Explore modern React patterns with TypeScript
 
 ---
 
-## 🧠 Tech stack
+## Tech stack
 
-- **Framework:** Next.js  
-- **Language:** TypeScript  
-- **CMS:** Sanity (headless CMS)  
-- **Deployment:** Vercel  
+- **Framework:** Next.js
+- **Language:** React & TypeScript
+- **CMS:** Sanity (headless CMS)
+- **Deployment:** Vercel
 
 ---
 
-## 📚 Learning focus
+## Learning focus
 
-This project was also used to deepen my understanding of:
+My previous experience has primarily been with Gatsby and Contentful.  
+I built this project in Next.js and Sanity to broaden my experience with a different framework and CMS ecosystem.
 
-- Next.js (routing, data fetching, rendering strategies)  
-- Headless CMS integration  
-- Structuring content-driven applications  
+Given my background with static site generators and headless CMS integrations, I was able to apply existing knowledge of decoupled architecture while exploring new patterns and tooling.
 
-I used official documentation and learning resources, including:
-- Next.js documentation  
-- Sanity “Learn” track  
+---
+
+### Next.js
+
+I focused on understanding and applying:
+
+- React Server and Client Components
+- App Router and file-based routing
+- Data fetching patterns
+- Rendering strategies (SSG / SSR)
+
+---
+
+### Sanity
+
+I used this project to gain hands-on experience with:
+
+- GROQ queries for structured content retrieval
+- Generating TypeScript types using Sanity Typegen
+- Working with the Sanity Content Lake API
+
+---
+
+### Key takeaway
+
+This project reinforced how transferable concepts such as component-based architecture, data modelling, and CMS integration are across different frameworks, while deepening my understanding of modern Next.js patterns.
 
 ---
 
@@ -70,16 +94,17 @@ http://localhost:3000
 
 ---
 
-## 🏗️ Architecture decisions
+## Architecture decisions
 
 ### 1. Decoupled architecture (Next.js + Sanity)
 
 The frontend and content layer are separated using Sanity as a headless CMS.
 
 **Why:**
-- Content can be updated without redeploying the application  
-- Scales better than hardcoded data  
-- Mirrors real-world production architectures  
+
+- Content can be updated without redeploying the application
+- Scales better than hardcoded data
+- Mirrors real-world production architectures
 
 ---
 
@@ -88,9 +113,10 @@ The frontend and content layer are separated using Sanity as a headless CMS.
 Pages are statically generated to optimise performance.
 
 **Why:**
-- Faster load times  
-- Improved SEO  
-- Reduced runtime complexity  
+
+- Faster load times
+- Improved SEO
+- Reduced runtime complexity
 
 ---
 
@@ -99,9 +125,10 @@ Pages are statically generated to optimise performance.
 The UI is built using reusable React components (e.g. project listings, categories, images).
 
 **Why:**
-- Promotes consistency across the application  
-- Reduces duplication  
-- Makes future changes easier to implement  
+
+- Promotes consistency across the application
+- Reduces duplication
+- Makes future changes easier to implement
 
 ---
 
@@ -110,9 +137,10 @@ The UI is built using reusable React components (e.g. project listings, categori
 TypeScript is used throughout, with types derived from CMS data where possible.
 
 **Why:**
-- Reduces runtime errors  
-- Improves developer experience  
-- Makes refactoring safer and more predictable  
+
+- Reduces runtime errors
+- Improves developer experience
+- Makes refactoring safer and more predictable
 
 ---
 
@@ -121,9 +149,10 @@ TypeScript is used throughout, with types derived from CMS data where possible.
 Content is structured in Sanity schemas to support flexible and reusable data.
 
 **Why:**
-- Allows structured, queryable content  
-- Supports future expansion (e.g. adding new content types)  
-- Keeps frontend logic simpler  
+
+- Allows structured, queryable content
+- Supports future expansion (e.g. adding new content types)
+- Keeps frontend logic simpler
 
 ---
 
@@ -132,16 +161,17 @@ Content is structured in Sanity schemas to support flexible and reusable data.
 The application is deployed using :contentReference[oaicite:0]{index=0}.
 
 **Why:**
-- Seamless integration with Next.js  
-- Fast global CDN delivery  
-- Simple CI/CD workflow  
+
+- Seamless integration with Next.js
+- Fast global CDN delivery
+- Simple CI/CD workflow
 
 ---
 
 ### 7. Trade-offs and considerations
 
-- Using a headless CMS adds complexity compared to static data, but improves scalability  
-- SSG improves performance but requires planning around content updates  
-- Type safety adds initial overhead but reduces long-term bugs  
+- Using a headless CMS adds complexity compared to static data, but improves scalability
+- SSG improves performance but requires planning around content updates
+- Type safety adds initial overhead but reduces long-term bugs
 
 ---
