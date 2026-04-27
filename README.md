@@ -1,7 +1,7 @@
 # Helena Agustsson — Developer Portfolio
 
 <p align="center">
-  <img src="./public/screenshot.png" alt="Portfolio preview" width="900"/>
+  <img src="./public/portfolio-screenshot.png" alt="Portfolio preview" width="900"/>
 </p>
 
 This is my personal developer portfolio, built in December 2025 to showcase my work and technical approach to modern web development.
