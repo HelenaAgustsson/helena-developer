@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="border: 2px solid grey; border-radius:5px;" src="./public/portfolio-preview.png" alt="Portfolio preview" width="900"/>
+    <img src="./public/portfolio-preview.png" alt="Portfolio preview" width="900"/>
 </p>
 
 # Helena Agustsson — Developer Portfolio

@@ -25,11 +25,15 @@ export function ProjectListing({ data, highlighted }: ProjectListingProps) {
                 <div className="mt-5">
                     <div className="flex my-2 gap-2 underline underline-offset-2">
                         <a href={github}>View GitHub repo</a>
-                        <div className="flex flex-col justify-center"><Image src={highlighted ? externalLink : externalLinkWhite} alt="external link" className="size-5" /></div>
+                        <div className="flex flex-col justify-center">
+                            <Image src={highlighted ? externalLink : externalLinkWhite} alt="external link" className="size-5" />
+                        </div>
                     </div>
                     <div className="flex my-2 gap-2 underline underline-offset-2">
                         <a href={link}>View website</a>
-                        <div className="flex flex-col justify-center"><Image src={highlighted ? externalLink : externalLinkWhite} alt="external link" className="size-5" /></div>
+                        <div className="flex flex-col justify-center">
+                            <Image src={highlighted ? externalLink : externalLinkWhite} alt="external link" className="size-5" />
+                        </div>
                     </div>
                 </div>
             </div>
