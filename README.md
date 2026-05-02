@@ -4,7 +4,7 @@
 
 # Helena Agustsson — Developer Portfolio
 
-This is my personal developer portfolio, built in December 2025 to showcase my work and technical approach to modern web development.
+This is my personal developer portfolio, built in 2025/2026 to showcase my work and technical approach to modern web development.
 
 🔗 **Live site:** https://helena-developer.vercel.app/
 
